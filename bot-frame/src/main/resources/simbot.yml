@@ -1,0 +1,43 @@
+simbot:
+  # 是否在bot注册完成后自动启动他们。
+  # 默认为true
+  auto-start-bots: true
+
+  # 自定义配置bot资源文件的扫描路径。
+  # 默认为 simbot-bots/*.bot*
+  bot-configuration-resources:
+    - classpath:bots/bot-*.bot*
+
+  # 如果需要，此处配置扫描顶层函数形式的 Binder Factory。
+  # 默认不扫描
+  top-level-binder-scan-package:
+    - example.binder.foo
+    - example.binder.bar
+
+  # 如果需要，此处配置扫描顶层函数形式的监听函数。
+  # 默认不扫描
+  top-level-listener-scan-package:
+    - example.listener.foo
+    - example.listener.bar
+  core:
+    bot-resource-type: RESOURCE_FIRST
+  component:
+    mirai:
+      message:
+        cache:
+          # 是否启动默认消息缓存。默认为false，即不启用。
+          enable: true
+          # 私聊消息缓存最大容量
+          priCapacity: 64
+          # 私聊消息缓存初始容量
+          priInitialCapacity: 64
+          # 群消息缓存最大容量
+          groCapacity: 2048
+          # 群消息缓存初始容量
+          groInitialCapacity: 2048
+          # 私聊缓存负载因子。默认为 0.75。
+          priLoadFactor: 0.75
+          # 群消息缓存负载因子。默认为 0.75。
+          groLoadFactor: 0.75
+
+

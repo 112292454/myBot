@@ -1,0 +1,15 @@
+{
+"component": "simbot.mirai",
+"code":"2046260452",
+"passwordInfo": {
+     "type": "text",
+     "text": "1154459434a"
+},
+"config":{
+    "protocol": "MACOS",
+    "deviceInfo": {
+          "type": "random",
+          "file":"classpath:device-$CODE$.json"
+        }
+}
+}

@@ -1,0 +1,3 @@
+ai:
+  host: http://localhost:7860/
+  second_host: http://10.28.166.91:7860/

@@ -1,0 +1,47 @@
+dubbo:
+  application:
+    name: ${spring.application.name}-dubbo
+    # 该配置在producer-server中是没有的，但是在consumer这里要配置一下
+    # 如果不配置这个QOS的端口，它会延用dubbo自动生成的端口，在启动的时候，QOS注册就会提示该端口已经被使用的错误
+    # 虽然启动时有打印端口已经被使用的错误，但是依旧可以正常启动服务，并且dubbo也可以正常调用，但是为了解决启动报错还是加上这个端口
+    # 这个也是apache官方给出的解决方案，这个端口不能给-1,它不会自动找到一个可用的端口，给-1会报错，端口1-65535自己选择一个
+    qos-port: 3334
+  scan:
+    base-packages: simbot.yzg.bot.botframe
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://${spring.cloud.nacos.server-addr}?namespace=${spring.cloud.nacos.discovery.namespace}
+    username: ${spring.cloud.nacos.username}
+    password: ${spring.cloud.nacos.password}
+    group: ${spring.cloud.nacos.config.group}
+    protocol: nacos
+  metadata-report:
+    group: ${spring.cloud.nacos.config.group}
+    address: nacos://${spring.cloud.nacos.server-addr}?namespace=${spring.cloud.nacos.config.namespace}
+  config-center:
+    timeout: 100000
+  consumer:
+    timeout: 100000
+
+
+spring:
+  application:
+    name: bot-frame
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 10.28.166.24:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        namespace: 822ba0e3-c662-4bda-a004-8e597dc4cb04
+        group: simbot
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        namespace: 822ba0e3-c662-4bda-a004-8e597dc4cb04
+        group: simbot
+        file-extension: yaml
+        name: ${spring.application.name}
+

@@ -1,0 +1,1072 @@
+[0m2023-04-29 02:07:47 V/Net 3425460643: Invalidate caches because hash file not available.[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[92m2023-04-29 02:07:47 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:07:47 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@28c42c5)): true[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:07:47 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[0m2023-04-29 02:07:47 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:07:48 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:07:48 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:07:53 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:07:53 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:07:53 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:07:58 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:07:58 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:07:58 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:08:25 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:08:25 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[93m2023-04-29 02:08:25 W/Net 3425460643: Failed with auth method: QRCode
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	... 19 more
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[0m2023-04-29 02:08:25 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))[0m
+[96m2023-04-29 02:08:25 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@28c42c5)) -> ProducerReady: true[0m
+[96m2023-04-29 02:08:25 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:08:25 V/Net 3425460643: [AuthControl/auth] Authorization cancelled[0m
+[93m2023-04-29 02:08:26 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:08:26 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:08:26 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:08:26 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[93m2023-04-29 02:08:27 W/Net 3425460643: Failed with auth method: null
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.close(CommonNetworkHandler.kt:425)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:119)
+	at net.mamoe.mirai.internal.AbstractBot.close(AbstractBot.kt:115)
+	at net.mamoe.mirai.internal.QQAndroidBot.close(QQAndroidBot.kt:97)
+	at net.mamoe.mirai.Bot.close(Bot.kt:188)
+	at top.mrxiaom.mirai.aoki.ui.model.LoginViewModel.cancelLogin(LoginViewModel.kt:58)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:48)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:45)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.buttonNegative$lambda$4(WidgetUtil.kt:51)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.$r8$lambda$Ge3mqFGST6cYj7sZdzNc3s2UZmM(Unknown Source:0)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt$$ExternalSyntheticLambda4.onClick(Unknown Source:2)
+	at androidx.appcompat.app.AlertController$ButtonHandler.handleMessage(AlertController.java:167)
+	at android.os.Handler.dispatchMessage(Handler.java:109)
+	at android.os.Looper.loopOnce(Looper.java:206)
+	at android.os.Looper.loop(Looper.java:296)
+	at android.app.ActivityThread.main(ActivityThread.java:8899)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:569)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:976)
+[0m
+[92m2023-04-29 02:08:27 I/Bot 3425460643: Bot cancelled: Job was cancelled[0m
+[93m2023-04-29 02:08:27 W/Net 3425460643: Exception in resumeConnection.
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.close(CommonNetworkHandler.kt:425)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:119)
+	at net.mamoe.mirai.internal.AbstractBot.close(AbstractBot.kt:115)
+	at net.mamoe.mirai.internal.QQAndroidBot.close(QQAndroidBot.kt:97)
+	at net.mamoe.mirai.Bot.close(Bot.kt:188)
+	at top.mrxiaom.mirai.aoki.ui.model.LoginViewModel.cancelLogin(LoginViewModel.kt:58)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:48)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:45)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.buttonNegative$lambda$4(WidgetUtil.kt:51)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.$r8$lambda$Ge3mqFGST6cYj7sZdzNc3s2UZmM(Unknown Source:0)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt$$ExternalSyntheticLambda4.onClick(Unknown Source:2)
+	at androidx.appcompat.app.AlertController$ButtonHandler.handleMessage(AlertController.java:167)
+	at android.os.Handler.dispatchMessage(Handler.java:109)
+	at android.os.Looper.loopOnce(Looper.java:206)
+	at android.os.Looper.loop(Looper.java:296)
+	at android.app.ActivityThread.main(ActivityThread.java:8899)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:569)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:976)
+	Suppressed: StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:930)
+	Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+		... 19 more
+	Caused by: java.io.IOException: Software caused connection abort
+		at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+		at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+		at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+		at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+		at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+		at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+		at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+		at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+		... 8 more
+[0m
+[93m2023-04-29 02:08:27 W/Net 3425460643: Network selector received exception, closing bot. (StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null))[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[92m2023-04-29 02:08:34 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:08:34 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@cbb882)): true[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:08:34 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:08:34 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:08:39 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:08:39 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:08:39 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:08:54 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:08:54 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Failed with auth method: QRCode
+java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+[0m
+[0m2023-04-29 02:08:54 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:08:54 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@cbb882)) -> ProducerReady: true[0m
+[96m2023-04-29 02:08:54 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:08:54 V/Net 3425460643: [AuthControl/auth] Authorization failed: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:08:54 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Finished(Producing(deferred.completed=false), java.lang.IllegalStateException: NetworkHandler is already closed.): true[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:08:54 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:08:54 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:08:54 D/Net 3425460643: [AuthControl/acquire] Authorization responded: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@188738714[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Failed with auth method: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@188738714
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+Caused by: java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	... 6 more
+[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+	Suppressed: java.lang.IllegalStateException: NetworkHandler is already closed.
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+		... 6 more
+	[CIRCULAR REFERENCE:java.lang.IllegalStateException: NetworkHandler is already closed.]
+[0m
+[93m2023-04-29 02:08:54 W/Net 3425460643: Network selector received exception, closing bot. (net.mamoe.mirai.internal.network.auth.ProducerFailureException)[0m
+[92m2023-04-29 02:08:54 I/Bot 3425460643: Bot cancelled: Bot closed[0m
+[0m2023-04-29 02:09:05 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:09:05 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:09:05 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:09:05 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:09:05 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:09:05 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[92m2023-04-29 02:09:05 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:09:05 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:09:06 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:09:06 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:09:06 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@dfb2e10)): true[0m
+[96m2023-04-29 02:09:06 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:09:06 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:09:06 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:09:06 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:09:06 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:09:06 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:09:06 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:09:06 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:09:11 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:09:11 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:09:11 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:09:16 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:09:16 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:09:16 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[93m2023-04-29 02:09:27 W/Net 3425460643: Failed with auth method: QRCode
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	... 19 more
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[0m2023-04-29 02:09:27 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))[0m
+[96m2023-04-29 02:09:27 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@dfb2e10)) -> ProducerReady: true[0m
+[96m2023-04-29 02:09:27 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:09:27 V/Net 3425460643: [AuthControl/auth] Authorization cancelled[0m
+[93m2023-04-29 02:09:27 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:09:27 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:09:27 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:09:27 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[93m2023-04-29 02:09:34 W/Net 3425460643: Failed with auth method: null
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.close(CommonNetworkHandler.kt:425)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:119)
+	at net.mamoe.mirai.internal.AbstractBot.close(AbstractBot.kt:115)
+	at net.mamoe.mirai.internal.QQAndroidBot.close(QQAndroidBot.kt:97)
+	at net.mamoe.mirai.Bot.close(Bot.kt:188)
+	at top.mrxiaom.mirai.aoki.ui.model.LoginViewModel.cancelLogin(LoginViewModel.kt:58)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:48)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:45)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.buttonNegative$lambda$4(WidgetUtil.kt:51)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.$r8$lambda$Ge3mqFGST6cYj7sZdzNc3s2UZmM(Unknown Source:0)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt$$ExternalSyntheticLambda4.onClick(Unknown Source:2)
+	at androidx.appcompat.app.AlertController$ButtonHandler.handleMessage(AlertController.java:167)
+	at android.os.Handler.dispatchMessage(Handler.java:109)
+	at android.os.Looper.loopOnce(Looper.java:206)
+	at android.os.Looper.loop(Looper.java:296)
+	at android.app.ActivityThread.main(ActivityThread.java:8899)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:569)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:976)
+[0m
+[92m2023-04-29 02:09:34 I/Bot 3425460643: Bot cancelled: Job was cancelled[0m
+[93m2023-04-29 02:09:34 W/Net 3425460643: Exception in resumeConnection.
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.close(CommonNetworkHandler.kt:425)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:119)
+	at net.mamoe.mirai.internal.AbstractBot.close(AbstractBot.kt:115)
+	at net.mamoe.mirai.internal.QQAndroidBot.close(QQAndroidBot.kt:97)
+	at net.mamoe.mirai.Bot.close(Bot.kt:188)
+	at top.mrxiaom.mirai.aoki.ui.model.LoginViewModel.cancelLogin(LoginViewModel.kt:58)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:48)
+	at top.mrxiaom.mirai.aoki.ui.dialog.QRLoginDialog$dialog$1$2.invoke(QRLoginDialog.kt:45)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.buttonNegative$lambda$4(WidgetUtil.kt:51)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt.$r8$lambda$Ge3mqFGST6cYj7sZdzNc3s2UZmM(Unknown Source:0)
+	at top.mrxiaom.mirai.aoki.util.WidgetUtilKt$$ExternalSyntheticLambda4.onClick(Unknown Source:2)
+	at androidx.appcompat.app.AlertController$ButtonHandler.handleMessage(AlertController.java:167)
+	at android.os.Handler.dispatchMessage(Handler.java:109)
+	at android.os.Looper.loopOnce(Looper.java:206)
+	at android.os.Looper.loop(Looper.java:296)
+	at android.app.ActivityThread.main(ActivityThread.java:8899)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:569)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:976)
+	Suppressed: StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+		at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:930)
+	Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+		... 19 more
+	Caused by: java.io.IOException: Software caused connection abort
+		at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+		at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+		at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+		at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+		at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+		at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+		at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+		at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+		... 8 more
+[0m
+[93m2023-04-29 02:09:34 W/Net 3425460643: Network selector received exception, closing bot. (StateSwitchingException(old=StateConnecting, new=StateClosed, cause=null))[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[92m2023-04-29 02:09:46 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:09:46 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: CAS: Consuming(value=Password@151423512) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@c6c4c71)): true[0m
+[96m2023-04-29 02:09:46 D/Net 3425460643: [AuthControl/acquire] Authorization responded: Password@151423512[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: Send: wtlogin.login(9:password-login)[0m
+[0m2023-04-29 02:09:46 V/Net 3425460643: Recv: wtlogin.login[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[92m2023-04-29 02:11:31 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:11:31 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@af9a9cc)): true[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:11:31 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:11:31 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:11:36 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:11:36 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:11:36 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:12:07 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:12:07 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Failed with auth method: QRCode
+java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+[0m
+[0m2023-04-29 02:12:07 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:12:07 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@af9a9cc)) -> ProducerReady: true[0m
+[0m2023-04-29 02:12:07 V/Net 3425460643: [AuthControl/auth] Authorization failed: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:12:07 D/Net 3425460643: CAS: ProducerReady -> Finished(ProducerReady, java.lang.IllegalStateException: NetworkHandler is already closed.): true[0m
+[96m2023-04-29 02:12:07 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): false[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:12:07 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:12:07 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:12:07 D/Net 3425460643: [AuthControl/acquire] Authorization responded: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@241948358[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Failed with auth method: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@241948358
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+Caused by: java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	... 6 more
+[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+	Suppressed: java.lang.IllegalStateException: NetworkHandler is already closed.
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+		... 6 more
+	[CIRCULAR REFERENCE:java.lang.IllegalStateException: NetworkHandler is already closed.]
+[0m
+[93m2023-04-29 02:12:07 W/Net 3425460643: Network selector received exception, closing bot. (net.mamoe.mirai.internal.network.auth.ProducerFailureException)[0m
+[92m2023-04-29 02:12:07 I/Bot 3425460643: Bot cancelled: Bot closed[0m
+[0m2023-04-29 02:12:10 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:12:10 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:12:10 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:12:10 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:12:10 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:12:10 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[92m2023-04-29 02:12:10 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:12:10 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:12:11 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:12:11 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:12:11 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@c04ece9)): true[0m
+[96m2023-04-29 02:12:11 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:12:11 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:12:11 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:12:11 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:12:11 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[0m2023-04-29 02:12:11 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:12:11 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:12:11 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:12:16 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:12:16 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:12:16 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[93m2023-04-29 02:12:29 W/Net 3425460643: Failed with auth method: QRCode
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	... 19 more
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[0m2023-04-29 02:12:29 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))[0m
+[96m2023-04-29 02:12:29 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@c04ece9)) -> ProducerReady: true[0m
+[96m2023-04-29 02:12:29 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:12:29 V/Net 3425460643: [AuthControl/auth] Authorization cancelled[0m
+[93m2023-04-29 02:12:29 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:12:29 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:12:29 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:12:29 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[93m2023-04-29 02:14:24 W/Net 3425460643: Failed with auth method: null
+StateSwitchingException(old=StateConnecting, new=StateClosed, cause=NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:352)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	... 19 more
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[93m2023-04-29 02:14:24 W/Net 3425460643: Network selector received exception, closing bot. (NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort))[0m
+[92m2023-04-29 02:14:24 I/Bot 3425460643: Bot cancelled: Bot closed[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[92m2023-04-29 02:14:31 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:14:31 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@d3d2cc8)): true[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:14:31 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:14:31 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:14:36 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:14:36 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:14:36 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:14:54 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:14:54 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Failed with auth method: QRCode
+java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+[0m
+[0m2023-04-29 02:14:54 V/Net 3425460643: [AuthControl/resume] Fire auth failed with cause: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:14:54 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@d3d2cc8)) -> ProducerReady: true[0m
+[0m2023-04-29 02:14:54 V/Net 3425460643: [AuthControl/auth] Authorization failed: java.lang.IllegalStateException: NetworkHandler is already closed.[0m
+[96m2023-04-29 02:14:54 D/Net 3425460643: CAS: ProducerReady -> Finished(ProducerReady, java.lang.IllegalStateException: NetworkHandler is already closed.): true[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.handler.selector.SelectorRequireReconnectException
+[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Exception in resumeConnection.
+NettyChannelException(message=null, cause=java.io.IOException: Software caused connection abort)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$handlePipelineException$1.invoke(NettyNetworkHandler.kt:46)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:329)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.handlePipelineException(NettyNetworkHandler.kt:152)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$setupChannelPipeline$1.exceptionCaught(NettyNetworkHandler.kt:72)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:177)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:930)
+Caused by: java.io.IOException: Software caused connection abort
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:421)
+	at io.netty.buffer.UnpooledHeapByteBuf.setBytes(UnpooledHeapByteBuf.java:282)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	... 8 more
+[0m
+[92m2023-04-29 02:14:54 I/Net 3425460643: ECDH key is valid.[0m
+[0m2023-04-29 02:14:54 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:14:54 D/Net 3425460643: [AuthControl/acquire] Authorization responded: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@117250393[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Failed with auth method: Error[net.mamoe.mirai.internal.network.auth.ProducerFailureException]@117250393
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+Caused by: java.lang.IllegalStateException: NetworkHandler is already closed.
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+	at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+	... 6 more
+[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Exception in resumeConnection.
+net.mamoe.mirai.internal.network.auth.ProducerFailureException
+	at net.mamoe.mirai.internal.network.auth.CoroutineOnDemandValueScope.receiveOrNull(CoroutineOnDemandValueScope.kt:152)
+	at net.mamoe.mirai.internal.network.auth.AuthControl.acquireAuth(AuthControl.kt:98)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl.login(SsoProcessor.kt:219)
+	at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateConnecting$startState$2.invokeSuspend(CommonNetworkHandler.kt:247)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+	Suppressed: java.lang.IllegalStateException: NetworkHandler is already closed.
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler$StateClosed.sendPacketImpl(CommonNetworkHandler.kt:396)
+		at net.mamoe.mirai.internal.network.handler.CommonNetworkHandler.sendPacketImpl(CommonNetworkHandler.kt:37)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:123)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.sendAndExpect(NetworkHandlerSupport.kt:149)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.queryQRCodeStatus(QRCodeLoginProcessor.kt:100)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl.process(QRCodeLoginProcessor.kt:120)
+		at net.mamoe.mirai.internal.network.components.QRCodeLoginProcessorImpl$process$1.invokeSuspend(Unknown Source:15)
+		... 6 more
+	[CIRCULAR REFERENCE:java.lang.IllegalStateException: NetworkHandler is already closed.]
+[0m
+[93m2023-04-29 02:14:54 W/Net 3425460643: Network selector received exception, closing bot. (net.mamoe.mirai.internal.network.auth.ProducerFailureException)[0m
+[92m2023-04-29 02:14:54 I/Bot 3425460643: Bot cancelled: Bot closed[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: Validated caches.[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: No server list cached.[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: CAS: JustInitialized -> CreatingProducer: true[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: CAS: CreatingProducer -> ProducerReady: true[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: CAS: ProducerReady -> Producing(deferred.completed=false): true[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: [AuthControl/auth] Authorization started[0m
+[92m2023-04-29 02:15:19 I/Net 3425460643: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: CAS: Producing(deferred.completed=false) -> Consuming(value=null): true[0m
+[92m2023-04-29 02:15:19 I/Net 3425460643: Successfully fetched ecdh public key from server.[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: [AuthControl/acquire] Acquiring auth method[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: CAS: Consuming(value=QRCode) -> Consumed(LatchImpl(CompletableDeferredImpl{Active}@57e80a1)): true[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: [AuthControl/acquire] Authorization responded: QRCode[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: requesting qrcode.[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:19 D/Net 3425460643: qrcode state changed: WAITING_FOR_SCAN[0m
+[0m2023-04-29 02:15:19 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:24 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:24 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:24 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:29 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:29 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:29 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:34 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:34 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:34 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:39 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:39 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:39 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:44 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:44 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:44 D/Net 3425460643: qrcode state changed: WAITING_FOR_CONFIRM[0m
+[0m2023-04-29 02:15:44 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:49 D/Net 3425460643: querying qrcode state.[0m
+[0m2023-04-29 02:15:49 V/Net 3425460643: Send: wtlogin.trans_emp[0m
+[96m2023-04-29 02:15:49 D/Net 3425460643: qrcode state changed: CONFIRMED[0m
+[0m2023-04-29 02:15:49 V/Net 3425460643: Recv: wtlogin.trans_emp[0m
+[0m2023-04-29 02:15:49 V/Net 3425460643: Send: wtlogin.login(9:qrcode-login)[0m
+[92m2023-04-29 02:15:50 I/Bot 3425460643: Login successful[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: [AuthControl/resume] Fire auth completed[0m
+[96m2023-04-29 02:15:50 D/Net 3425460643: CAS: Consumed(LatchImpl(CompletableDeferredImpl{Active}@57e80a1)) -> Finished(Consumed(LatchImpl(CompletableDeferredImpl{Active}@57e80a1)), null): true[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: [AuthControl/auth] Authorization cancelled[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: wtlogin.login[0m
+[92m2023-04-29 02:15:50 I/Bot 3425460643: Saved account secrets to local cache for fast login.[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: StatSvc.register(online)[0m
+[92m2023-04-29 02:15:50 I/Bot 3425460643: Login successful.[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Server time updated, serverTime: 1682705750, diff: 0ms=0.0s[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: StatSvc.register[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: No BdhSession cache[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Syncing friend message history...[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Start loading friend list...[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Start loading stranger list...[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Start loading friendGroup list...[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Online OtherClients: ELZ-AN10(MOBILE), LAPTOP-BCFQRVP7(WINDOWS)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: OidbSvc.0x5d2_0[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Successfully loaded stranger list: 0 in total[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Start loading group list...[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: OidbSvc.0x496[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.getFriendGroupList[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Loading friend list: 12/12[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Successfully loaded friend list: 12 in total[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.getFriendGroupList[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Loading friendGroup list: 4/4[0m
+[92m2023-04-29 02:15:50 I/Net 3425460643: Successfully loaded friendGroup list: 4 in total[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopListReqV2[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:50 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2023-04-29 02:15:51 V/Net 3425460643: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2023-04-29 02:15:52 V/Net 3425460643: Recv: friendlist.GetTroopMemberListReq[0m
+[92m2023-04-29 02:15:52 I/Net 3425460643: Successfully loaded group list: 8 in total.[0m
+[92m2023-04-29 02:15:52 I/Net 3425460643: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2023-04-29 02:15:52 I/Net 3425460643: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[0m2023-04-29 02:15:52 V/Bot 3425460643: Event: BotOnlineEvent(bot=Bot(3425460643))[0m
+[92m2023-04-29 02:15:52 I/Bot 3425460643: Bot login successful.[0m
+[92m2023-04-29 02:15:52 I/Net 3425460643: Syncing friend message history: Success.[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Server list: msfwifi.3g.qq.com:8080, 111.30.187.240:8080, 111.31.200.210:80, 120.232.27.24:80, 36.155.201.181:8080, 36.155.248.239:14000, 36.155.210.174:80, 111.30.169.125:443, 111.31.200.230:80, 120.241.150.95:80.[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: No BdhSession to save to cache[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Saving server list to cache[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Recv: ConfigPushSvc.PushReq[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Saving bdh session to cache[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2023-04-29 02:15:53 V/Net 3425460643: Recv: ConfigPushSvc.PushReq[0m
+[0m2023-04-29 02:16:00 V/Net 3425460643: Send: StatSvc.register(offline)[0m
+[0m2023-04-29 02:16:00 V/Bot 3425460643: Event: BotOfflineEvent.Active(bot=Bot(3425460643), cause=null, reconnect=false)[0m
+[92m2023-04-29 02:16:00 I/Bot 3425460643: Bot is closed manually[0m
+[92m2023-04-29 02:16:00 I/Bot 3425460643: Bot cancelled: Job was cancelled[0m
